@@ -7,3 +7,7 @@ Sepcial Thanks to scotch.io for their web scraping tutorial
 
 
 http://scotch.io/tutorials/javascript/scraping-the-web-with-node-js
+
+and the google feed api
+
+https://developers.google.com/feed/
