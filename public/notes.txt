@@ -1,0 +1,1 @@
+When the page is wide and skinny use css and javascript and set the max-height of #navigation to big number and then transform-origin: top center; and transform: scale(); to get it to fit
