@@ -90,7 +90,7 @@
             
         </div>
         
-         <div class="section">
+         <div class="space darkGrey">
            
              
         
@@ -98,47 +98,10 @@
         
         </div>
         
-        <div class="section" id="read">
-            <img src="http://www.wnyc.org/i/620/464/l/80/1/glenngould.jpg">
-            <div class="postInfo lightGrey whiteText" number="0">
-                <h3>Glenn Gould In Rapture</h3>
-                <span>Thursday, September 4th, 2014</span>
-                <span>Robert Krulwhich,</span>
-                <span>Host, Radiolab</span>
-                <div class="whichSection orangeText">Read</div>
-            </div>
-        
-        
-        
-        </div>
     
-        <div class="section" id="listen">
-         <img src="http://www.wnyc.org/i/620/348/l/80/1/JayZShot.jpeg">
-            <div class="postInfo lightGrey whiteText" number="0">
-                <h3>Souls Tumbling In The Light</h3>
-                <span>Thursday, September 11th, 2014</span>
-                <span>Robert Krulwhich,</span>
-                <span>Host, Radiolab</span>
-                <div class="whichSection orangeText">Listen</div>
-            </div>
-            
-        
-        
-        
-        
-        
-        </div>
+     
     
-        <div class="section" id="watch">
-         <img src="https://media2.wnyc.org/i/620/372/l/80/1/still_campbell_tga_youtube_1.png">
-            <div class="postInfo lightGrey whiteText" number="0">
-                <h3>Souls Tumbling In The Light</h3>
-                <span>Thursday, September 11th, 2014</span>
-                <div class="whichSection orangeText">Watch</div>
-            </div>
-            
-            
-        </div>
+        
     
         <div id="all"></div>
     
@@ -220,6 +183,7 @@ for (var i=0; i<thefeeds.length-1; i++) {
         
         section.addEventListener('click', function(e) {
          
+            $(".logo").css("height",$(".logo").height() + "px");
            
             for (var i = 0; i< e.path.length;i++) {
              if (e.path[i].className == "section") {
@@ -235,7 +199,13 @@ for (var i=0; i<thefeeds.length-1; i++) {
         });
         
         function showStory(e) {
-        
+            
+            $(".bees").remove();
+            
+          var index = stories[e.attr("number")].name.indexOf("Murdersquishing");
+            
+            if (index==-1) {
+        console.log(e);
             $(".articleHolder").each(function() {
                $(this).remove();
             });
@@ -261,10 +231,26 @@ for (var i=0; i<thefeeds.length-1; i++) {
                $(this).attr("style","width: 100%!important");
                
             });
-          
-                
-                window.scrollTo(0,e.offset().top);
-           
+           window.scrollTo(0,e.offset().top);
+        } else {
+            $(".sectionPost").removeClass("sectionPost");
+            
+            $(".articleHolder").each(function() {
+               $(this).remove();
+            });
+            $(".hidden").each(function() {
+               $(this).removeClass("hidden");
+            });
+            index = stories[e.attr("number")].name.indexOf("Murdersquishing");
+            if (index>=0) {
+            e.append("<iframe class='bees' src='/bees/index.html' style='width: 115%; height: 80%;margin-left: -12%;border-width: 0px;z-index: 200;position: relative; background-color: black; margin-bottom: 7%;'></iframe>");
+                }
+            e.addClass("sectionPost");
+            e.children(".postInfo").addClass("hidden");
+             window.scrollTo(0,$(".bees").offset().top-150);
+        }
+               
+        
         }
     });
     
