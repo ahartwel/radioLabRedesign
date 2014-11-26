@@ -97,7 +97,7 @@ app.get('/scrape2/:url/:id', function(req, res){
 })
 
 
-ar port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 app.listen(port)
 console.log('Magic happens on port 8081');
 exports = module.exports = app; 	
