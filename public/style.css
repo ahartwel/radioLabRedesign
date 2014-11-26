@@ -1,544 +1,346 @@
-#container {
-    position: absolute;
- width: 100%;
-    height: 100%;
-   top: 0px;
-    left: 0px;
-    font-family: "expo-sans-pro";
-    background-color: white;
-  
-}
-.iframe {
-position: fixed;
-width: 75%;
-    height: 100%;
-    top: 0px;
-    left: 25%;
-z-index: -2;
-    border: none;
-}
-
-:focus {
- outline-color: transparent;
-    outline-style: none;
-}
-.back {
- position: fixed;
-top: 0px;
-left: 25%;
-z-index: -4;
+body {
+        font-family: "fira-sans";
+    background-color: rgb(15,15,15);
     
 }
 
-a {
- color: inherit;
-    text-decoration: none;
-    
-}
-
-
-
-.home {
- 
-}
-
-.darkGrey {
- background-color: #303535;   
-}
-
-.lightGrey {
- background-color: #656868;   
-    
-}
-
-
-.light {
- background-color: rgba(0,0,0,.03);   
-    
-}
-
-.darkGreyText {
- color: #303535;   
-}
-
-.lightGreyText {
- color: #656868;   
-}
-
-.whiteText {
- color: white;   
-    
-}
-
-.orangeText {
-    color: #F26722;
-}
-
-.secondaryNav {
- 
-    top: 0px;
-    left: 0px;
+div#container {
     width: 100%;
-    height: 30px;
-    font-weight: 800;
-    
-}
-
-.secondaryNav div {
-float: left;
-width: 33%;
-text-align: center;
-    margin-top: 1.5%;
-}
-
-#navigation {
-position: fixed;
-width: 100%;
-
-height: 100%;
-overflow: scroll;
--webkit-box-shadow: rgba(0,0,0,.4) 0px 0px 8px;
--webkit-box-shadow: rgba(0,0,0,.4) 0px 0px 8px;
-box-shadow: rgba(0,0,0,.4) 0px 0px 8px;
-    -webkit-transition: left 3s;
-    transition: left .3s, width .3s, height .3s, max-height .3s;
-    z-index: 1000;
-}
-
-.logo {
-height: 25%;
-    width:100%;
-
-margin-top: 5%;
-}
-
-
-.logo img {
-     height: 100%;
-width: auto;
-margin: auto;
-display: block; 
-    
-    }
-
-
-.mainNav {
-width: 90%;
-padding: 2%;
-padding-left: 5%;
--webkit-transition: all .5s;
-transition: all .5s;
-}
-
-
-
-.mainNav div {
-font-size: 11vh;
-text-align: center;
-  font-family: "azo-sans-uber";  
-    -webkit-transition: all .2s;  
-    transition: all .2s;
-}
-
-
-.mainNav div:hover {
- color:white;
-   
-    
-    
-}
-
-
-.socialBar {
-width: 90%;
-padding-left: 5%;
-bottom: 0px;
-padding-top: 2%;
-padding-bottom: 2%;
-padding-right: 5%;
-height: 5%;
-position: fixed;
-    
- -webkit-box-shadow: rgba(0,0,0,.5) 0px 0px 8px;
-    
- box-shadow: rgba(0,0,0,.5) 0px 0px 8px;
-}
-
-
-.fullHeight .socialBar {
- -webkit-box-shadow: rgba(0,0,0,0) 0px 0px 0px;
- box-shadow: rgba(0,0,0,0) 0px 0px 0px;   
-    
-}
-.socialBar img {
-height: 84%;
-margin-left: 5px;
-float: left;
-}
-
-.twitter {
-height: 100%;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-}
-
-.twitter:hover .socialColor {
- fill: white!important;   
-}
-
-.facebook {
-height: 100%;
-     -webkit-transition: all .5s;
-     transition: all .5s;
-}
-
-.facebook:hover .socialColor {
- fill: white!important;   
-}
-
-.search {
-width: 60%;
     height: 100%;
-float: right;
-}
-
-#searchBar {
-    height: 100%;
-    
-}
-
-input.searchText {
-width: 100%;
-    width: 100%;
-border-radius: 23px;
-border: 0px;
-padding: 6px;
-height: 100%;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-}
-
-
-input.searchText:focus {
-    background-color: white;
-    color: grey;
-    border: none;
-}
-
-input.searchText {
-width: 100%;
-border-radius: 23px;
-border: 0px;
-padding: 6px;
-}
-
-
-
-
-.section {
- overflow: hidden;
-    position: relative;
-     z-index: 10;
-    -webkit-transition: all .5s translate 3s;
-    transition: height .2s, width .2s, transform 1s;
-    width: 100%;
-    height: 36%;
-    overflow: hidden;
-    margin-bottom: 5px;
-    min-height: 150px;
-}
-
-.section img {
-   min-width: 100%;
-height: auto;
-min-height: 100%;
-}
-
-.space {
- height: 50%;
-    width: 100%;
-}
-
-
-
-.postInfo {
- z-index: 2;   
- position: absolute;
-    bottom: 5%;
-
-width: 65%;
-    padding: 1%;
-    padding-left: 5%;
-    padding-right: 0px;
-    left: 0px;
-    background-color: rgba(101,104,104,.6);
-    -webkit-transition: opacity .5s;
-    transition: opacity .5s;
-}
-
-
-.postInfo:hover {
- cursor: pointer;   
-    
-}
-
-h3 {
- margin: 0px;
-margin-bottom: 1%;
-    font-size: 130%;
-  font-size: 5vw;  
-}
-
-.postInfo span {
- font-size: 3vw;   
-}
-
-
-.fullHeight {
- height: 100%!important;
-    max-height: 100%!important;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-    
-    
-}
-
-
-.hiddenMenu {
-height: 10%;
-font-size: 5vw;
-vertical-align: middle;
--webkit-transform: translateY(-100px);
--ms-transform: translateY(-100px);
-transform: translateY(-100px);
-z-index: 1000;
     position: fixed;
     top: 0px;
     left: 0px;
+    overflow: hidden;
+    background: url(images/background.png) no-repeat center center fixed;    
+    -webkit-background-size: cover;   background-size: cover;
+}
+
+div#header {
     width: 100%;
-    -webkit-transition: all .3s;
-    transition: all .3s;
+    height: 75px;
+    position: fixed;
+    top: 13px;
+    left: 0px;
+    -webkit-transition: -webkit-transform .5s;
+    transition: transform .5s;
+    font-weight: 100;
+    padding-bottom: 0%;
 }
 
-.hiddenMenu .logo {
-height: 71%;
-margin: 0px;
-padding-top: 2%;
-float: left;
-width: auto;
-margin-right: 3%;
-margin-left: 2%;
+.mobileNavigation {
+     
+    
+    height: 100%;
+    width: 24%;
+    float: left;
+    position: relative;
+    margin-left: -1px;
 }
 
-.hiddenMenu .logo img {
- height: 100%;
-    width: auto;
-}
-
-.menuBar {
-font-size: 8vh;
-right: 0px;
-position: relative;
-font-family: "azo-sans-uber";
-}
-
-.collapseMenu {
- height: 10%!important;   
-}
-
-.articleHolder {
-color: white;
-font-size: 3vw;
-border-bottom: 25px solid white;
-    margin-bottom: 25px;
-}
-
-.showHidden {
-    -webkit-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    transform: translateY(0px);
-}
-
-
-.fullHeight {
- height: 100%!important;   
-}
-
-
-img.mcePuppyImage {
-width: 100%;
-}
-
-.embedded-image {
-width: 80%;
-margin-left: 10%;
-margin-top: 7%;
-}
-
-.embedded-image .embedded-image .image-caption {
-width: 150%;
-margin-left: -22%;
-}
-
-.sectionPost {
- width: 90%;
-    margin-left: 5%;
+div#logo {
+    width: 75%;
+    height: 100%;
+    float: left;
     overflow: visible;
-    height: auto;
+    overflow-y: hidden;
+    overflow-x: visible;
+    position: relative;
+    margin-top: -7px;
+    -webkit-transform: translateX(7%);
+    -ms-transform: translateX(7%);
+    transform: translateX(7%);
+    font-weight: 100;
 }
 
-.sectionPost img {
- width: 100%;   
+img.mobileMenu {
+    width: 21px;
+    padding-top: 23px;
+    margin-right: -1px;
 }
 
-.hidden {
- opacity: 0;   
+a.mobileMenuText {
+    width: 50px;
+    color: white;
+    font-size: 13px;
+    display: block;
+    top: 0px;
+    position: absolute;
+    top: 25px;
+    left: 24px;
+    text-decoration: none;
+}
+
+#aboutNav .mobileMenuText {
+    text-align: right;
+}
+
+img.logo {
+    height: 91%;
+    padding-top: 14px;
+    margin-left: -8px;
+    margin-left: 0%;
+}
+
+a.logoText {
+    position: absolute;
+    color: white;
+     
+    display: inline-block;
+    height: 100%;
+    font-size: 22px;
+    top: 25px;
+    text-decoration: none;
+    left: 69px;
+}
+
+
+@media (max-width: 340px) {
+
+#logo {
+top: -7px;
     
 }
 
-.section p {
-color: white;
-font-size: 5vw;
+ img.logo {
+    height: 79%;
+  
+    margin-top: 8px;
 }
-
-.section span {
-color: white;
-}
-.section a {
- color: white;   
-}
-
-
-h2 {
-    
- font-size: 8vw;
-color: white;
-font-weight: 800;
-    padding: 0px;
-    margin-bottom: 2%;
    
+    
+    a.logoText {
+ 
+    font-size: 18px;
+   
+    top: 34px;
+    left: 61px;
 }
+    
+    
+
+    
+    
+    
+}
+
+
+
+
+    @media (max-width: 310px) {
+
+
+    
+    a.logoText {
+ 
+    font-size: 14px;
+   
+    top: 38.5px;
+    
+}
+    
+    
+}
+
+
+.right img {
+    float: right;
+}
+
+.right a {
+    position: absolute;
+    right: 24px;
+    left: initial;
+    bottom: 30px;
+}
+
+a.logoText {}
+
+div#contentContainer {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    left: 0;
+    
+    overflow: hidden;
+    height: 100%;
+    height: -webkit-calc(100% - 75px);
+    height: -webkit-calc(100% - 90px);
+    height: -webkit-calc(100% - 165px);
+    height: calc(100% - 165px);
+}
+
+.right {
+
+    position: absolute;
+    
+
+    top: 0px;
+    right: 0px;
+
+
+
+}
+
+.third {
+    width: 86%;
+    height: 95%;
+    overflow-y: scroll;
+    float: left;
+    padding: 7%;
+    top: 0px;
+    position: absolute;
+}
+
+
+
+#podcasts {
+ left: 100%;   
+}
+
+#about {
+ left: 200%;   
+}
+
 
 h3 {
-   font-size: 4vw;
-color: white;
-font-weight: 800;     
-    margin-bottom: 4%;
-   
+    font-family: "fira-sans";
+    font-weight: 100;
+    font-size: 28px;
+    color: white;
+    line-height: 135%;
+    margin-bottom: 7px;
+    margin-top: -8px;
 }
 
-@media (max-width: 1024px) {
-    
-    @media (max-height: 500px) {
-    .mainNav div {
-     font-size: 9vh;   
-    }
- 
-    
-    .logo {
-        width: 50%;
-        height: 40%;
-        float: left;
-    }
-    
-    .mainNav {
-     width: 29%;
-float: left;   
-    }
-    
-    
-    .mainNav div {
-        
-     font-size:  15vh;   
-    }
-    
+.button {
+    background-color: rgb(240,104,36);
+    display: inline-block;
+    padding: 15px;
+    padding-left: 36px;
+    padding-right: 36px;
+    color: white;
 }
+
+p#stations {
+    padding: 8px;
+    margin-top: 0px;
 }
 
 
-@media (min-width: 1024px) {
-#navigation {
- width: 20%!important;
- position: fixed;
-    top: 0px;
-        left:0px;
-    height: 100%!important;
+
+
+.podcastContainer {
+    width: 100%;
+    margin-bottom: 62px;
+}
+
+h4 {
+    color: white;
+    font-size: 21px;
+    font-weight: 100;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    width: 78%;
+}
+
+.podcastContent {
+    width: 100%;
+}
+
+.podcastImage {
+width: 68%;
+background-color: black;
+min-height: 131px;
+    -webkit-background-size: cover;
+background-size: cover;
+}
+
+p.excerpt {
+    color: white;
+    font-weight: 200;
+    font-size: 14px;
+    width: 95%;
+    margin-left: 0%;
+    margin-bottom: 19px;
+}
+
+a.readMore {
+    color: white;
+    float: right;
+    margin-right: 11px;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.podcastImage img {
+    width: 20%;
+    margin-top: 35px;
+    margin-left: 19%;
+    opacity: 0.75;
+}
+
+
+.excerpt {
+ color: white;
+font-weight: 200;
+font-size: 14px;
+width: 95%;
+margin-left: 0%;
+margin-bottom: 19px;   
+ max-height: 100px;
     overflow: hidden;
-    
+  display: block;
+  text-overflow: ellipsis;
 }
 
-    .space {
-     height: 0px;   
-    }
-    
-    
-    .mainNav div {
-     font-size: 4vw;   
-        
-    }
-    
-    .socialBar {
-     position: absolute;
-        -webkit-box-shadow: rgba(0,0,0,0) 0px 0px 0px;
-        box-shadow: rgba(0,0,0,0) 0px 0px 0px;
-    }
-    
-    .search {
-     width: 55%;   
-    }
-    
-    .section {
-       
-     width: 80%;
-        margin-left: 20%;
-     min-height: 0px;
-        margin-top: 0px;
-        height: 50%;
-        min-height: 350px;
-    }
-    .sectionPost {
-     width: 65%;
-        margin-left: 30%;
-        height: auto;
-    }
-    
-    .articleHolder {
-     font-size: 2vw;   
-       border-bottom: 25px solid white;
-        margin-bottom: 45px;
-    }
-    
-    h2 {
-     font-size: 6vw;
-    }
-    
-    h3 {
-       font-size: 2vw; 
-        
-    }
-    .section p {
-     font-size: 2vw;   
-    }
-    
-    .section img {
-     width: 100%;   
-        
-    }
 
-    
-    @media (max-height: 500px) {
-    .mainNav div {
-     font-size: 13vh;   
-    }
-        
-          
-    @media (max-height: 375px) {
-    .mainNav div {
-     font-size: 10vh;   
-    }
-        
-        
-    }
-    
+.pButton {
+ height: 58%; 
+	
+ margin-top: 12px;
+ width: 40px;
+	border: none;
+	-webkit-background-size: 50% 50%;
+	background-size: 50% 50%;
+	background-position: center;   
 }
 
+.play{background: url('/images/play.svg') no-repeat;}
+.pause{background: url('/images/pause.svg') no-repeat;}
+
+div#musicPlayer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 85px;
+}
+
+div#player {
+    width: 100%;
+    height: 60%;
+    background-color: rgba(0,0,0,.2);
+}
+
+div#audioplayer {
+    width: 90%;
+    height: 100%;
+    padding-left: 7%;
+}
+
+
+div#queue {
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 51px;
+}
+
+h5 {
+    margin: 0px;
+    color: white;
+    font-weight: 200;
+    padding-left: 6%;
+    margin-top: 9px;
+}
