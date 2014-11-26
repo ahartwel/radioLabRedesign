@@ -79,7 +79,7 @@ feedpointer.load(displayfeed2)
          this.casts[this.casts.length - 1].html = "<div class='podcastContainer'><h4>" + title + "</h4>";   
          this.casts[this.casts.length - 1].html += "<div class='podcastContainer'><p class='excerpt' number='" + (this.casts.length - 1) + "'></p>";
          this.casts[this.casts.length - 1].html += "<a href='#' class='readMore'>Read More</a><div class='podcastImage' style='background: url(" + image + ") no-repeat center center fixed; webkit-background-size: cover; background-size: cover;'>";
-         this.casts[this.casts.length - 1].html += "<img class='playButton' src='images/play.svg'><img sclass='addToPlaylist' src='images/addToPlaylist.svg'></div></div></div>";
+         this.casts[this.casts.length - 1].html += "<img class='playButton' src='images/play.svg'><img sclass='addToPlaylist' src='images/addToPlayList.svg'></div></div></div>";
             
         document.getElementById("podcasts").innerHTML  += this.casts[this.casts.length-1].html;
          
