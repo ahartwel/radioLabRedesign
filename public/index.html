@@ -20,7 +20,9 @@
        <body> 
            
            <div id="container"> <!--CONTAINER-->
-           
+           <div id="backgroundImage">
+               <img src="">
+               </div>
            
                 <div id="header"> <!--HEADER-->
                     
@@ -98,7 +100,11 @@
                     
                     
                     <div class="third" id="about">
-                    
+                     <div id="logo2">
+                       
+                        <img src="images/logo.svg" class="logo">
+                        
+                    </div>
                         <form id="search">
                             <input type="text" placeholder="Search..."></input>                        
                         </form>
@@ -110,23 +116,33 @@ Radiolab is heard around the country on more than 450 NPR member stations. Check
                         <p id="support">Radiolab is supported, in part, by the National Science Foundation and the Alfred P. Sloan Foundation, enhancing public understanding of science and technology in the modern world. More information about Sloan at www.sloan.org.</p>
                     
                     <p class="button" id="Support">Support RadioLab</p>
-                    <p class="button" id="Sign In">Sign In</p>
+                    <p class="button" id="SignIn">Sign In</p>
                     
                     
                     </div>
                
                
                
-               <div id="musicPlayer">
+               
+               
+               
+               </div>       <!--END OF CONTENT CONTAINER-->
+           
+           <div id="musicPlayer">
                
                <div id="player">
                    <div id="audioplayer">
-	               <button id="pButton" class="play pButton" onclick="play()"></button>
-	               <button id="pauseButton" class="pause pButton" onclick="play()"></button>
-	                   <div id="timeline">
-		                  <div id="playhead"></div>
+	               <button id="pButton" class="play pButton"></button>
+	               <button id="pauseButton" class="pause pButton"></button>
+                       <div id="timeline">
+                            <div id="playhead">
+                       <div class="timing">2:34/25:42</div>
+                       <div class="dot"></div>
+                       </div>
+                   </div>  
+                           
 	                   </div>
-                   </div> 
+                   
                    
                 </div>
                <div id="queue">
@@ -138,9 +154,6 @@ Radiolab is heard around the country on more than 450 NPR member stations. Check
                 </div>
                
                </div>
-               
-               
-               </div>       <!--END OF CONTENT CONTAINER-->
            
            
            
@@ -154,16 +167,18 @@ Radiolab is heard around the country on more than 450 NPR member stations. Check
            
            
            
-           
-           
-           
-           
+         <div class="imageLoading">  
+           <img src="images/addToPlayList.svg">
+ <img src='images/social.svg'><img src='images/social.svg'>
+             </div>
            </div>  <!--END OF CONTAINER-->
            
            
            
            
-           
+        <audio id="music">
+<source src="" type="audio/mpeg" />
+</audio>   
            
    </body> 
 

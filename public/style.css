@@ -10,9 +10,9 @@ div#container {
     position: fixed;
     top: 0px;
     left: 0px;
-    overflow: hidden;
-    background: url(images/background.png) no-repeat center center fixed;    
+    overflow: hidden;    
     -webkit-background-size: cover;   background-size: cover;
+    
 }
 
 div#header {
@@ -39,7 +39,7 @@ div#header {
 
 div#logo {
     width: 75%;
-    height: 100%;
+    height: 86%;
     float: left;
     overflow: visible;
     overflow-y: hidden;
@@ -75,8 +75,8 @@ a.mobileMenuText {
 }
 
 img.logo {
-    height: 91%;
-    padding-top: 14px;
+    height: 82%;
+    padding-top: 18px;
     margin-left: -8px;
     margin-left: 0%;
 }
@@ -90,7 +90,7 @@ a.logoText {
     font-size: 22px;
     top: 25px;
     text-decoration: none;
-    left: 69px;
+    left: 57px;
 }
 
 
@@ -183,12 +183,13 @@ div#contentContainer {
 
 .third {
     width: 86%;
-    height: 95%;
+    height: 90%;
     overflow-y: scroll;
     float: left;
     padding: 7%;
     top: 0px;
     position: absolute;
+    padding-bottom: 5%;
 }
 
 
@@ -287,7 +288,7 @@ font-size: 14px;
 width: 95%;
 margin-left: 0%;
 margin-bottom: 19px;   
- max-height: 100px;
+ max-height: 107px;
     overflow: hidden;
   display: block;
   text-overflow: ellipsis;
@@ -314,11 +315,14 @@ div#musicPlayer {
     left: 0px;
     width: 100%;
     height: 85px;
+    z-index: 10000;
 }
 
 div#player {
     width: 100%;
     height: 60%;
+    -webkit-transition: all .5s;
+    transition: all .5s;
     background-color: rgba(0,0,0,.2);
 }
 
@@ -326,15 +330,19 @@ div#audioplayer {
     width: 90%;
     height: 100%;
     padding-left: 7%;
+    
 }
 
 
 div#queue {
     width: 100%;
-    height: 40%;
+    height: 203px;
     background-color: rgba(0,0,0,.3);
     position: absolute;
     top: 51px;
+    left: 0px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
 
 h5 {
@@ -343,4 +351,241 @@ h5 {
     font-weight: 200;
     padding-left: 6%;
     margin-top: 9px;
+    width: 100%;
+   
+}
+
+
+.socialContainer {
+    width: 10%;
+    position: absolute;
+    right: 83px;
+    margin-top: 35px;
+    height: 7%;
+    overflow: hidden;
+}
+
+.socialContainer img {
+    height: 100%;
+    min-width: 200%;
+    left: 0px;
+}
+
+img {}
+
+.twitterContainer {
+    right: 32px;
+}
+
+.twitterContainer img {
+    left: -92%;
+    position: absolute;
+}
+
+.imageLoading {
+ opacity: 0; top: 100%;
+left: 100%;
+position: fixed;   
+}
+
+@media (max-width: 340px) {
+    
+    .twitterContainer img {
+left: -118%;
+position: absolute;
+}
+}
+
+
+div#timeline {
+    background-color: rgb(240,104,36);
+    position: absolute;
+    width: 57%;
+    top: 34px;
+    background-color: rgb(240,104,36);
+    height: 7px;
+    left: 100px;
+    left: -webkit-calc(100px + 6%);
+    left: calc(100px + 6%);
+}
+
+div#playhead {
+    background-color: rgb(240,104,36);
+    position: absolute;
+    top: 0px;
+    left: -27px;
+}
+
+
+
+.timing {
+    top: -25px;
+    position: absolute;
+    font-size: 9.5px;
+    background-color: rgb(100,100,100);
+    padding: -1px;
+    padding-left: 5px;
+    padding-right: 6px;
+    width: 59px; border-radius: 10px; /* future proofing */ -khtml-border-radius: 10px; /* for old Konqueror browsers */;
+    color: rgb(240,104,36);
+}
+
+.timing:after {
+  content:"";
+  position:absolute;
+  bottom: -7px; /* value = - border-top-width - border-bottom-width */
+  left: 21px; /* controls horizontal position */
+  border-width: 9px 5px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color: rgb(100,100,100) transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+.dot {
+    position: absolute;
+    background-color: rgb(100,100,100);
+    width: 10px;
+    height: 10px;
+    border-radius: 26px;
+    top: -2px;
+    left: 20px;
+}
+
+
+div#logo2 {
+    width: 40%;
+    margin-left: 29%;
+    margin-bottom: 28px;
+}
+
+#logo2 img {
+    width: 100%;
+    height: auto;
+}
+
+#search input[type="text"] {
+    color: white;
+    background-color: rgba(0,0,0,.3);
+    border: none;
+    padding: 13px;
+    width: 61%;
+    font-family: "fira-sans";
+    font-size: 19px;
+    font-weight: 200;
+    margin-left: 17%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#about p {
+    width: 90%;
+    color: white;
+    font-family: "fira-sans";
+    font-weight: 200;
+    font-size: 13px;
+    margin-left: 4%;
+}
+
+form#search {
+    margin-bottom: 25px;
+    margin-top: 18px;
+}
+
+p#Support {
+    width: auto;
+}
+
+p#Sign In {}
+
+p#SignIn {
+    width: auto;
+}
+
+div#backgroundImage {
+    width: 150%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+#backgroundImage img {
+    min-height: 100%;
+    min-height: 100%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 0.8;
+}
+
+ul#queueList {
+    color: white;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+
+.toLeft {
+ -webkit-transform: translate3d(-100%,0,0);
+ transform: translate3d(-100%,0,0)
+    
+}
+.toRight {
+ -webkit-transform: translate3d(0%,0,0);
+ transform: translate3d(100%,0,0);
+}
+
+
+li a {
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+}
+
+ul#queueList {
+    height: 151px;
+    overflow: scroll;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+
+.addFromPlaylist img {
+    height: 20px;
+    margin-left: 14px;
+    -webkit-transform: translate3d(0,5px,0);
+    transform: translate3d(0,5px,0);
+}
+
+#queueList li {
+    height: 42px;
+    padding-top: 9px;
+    width: 90%;
+    padding-left: 10%;
+}
+
+a.addFromPlaylist {
+    margin-right: 12px;
+}
+
+.button.alert {
+    z-index: 100;
+    position: absolute;
+    top: 74px;
+    font-size: 11px;
+    width: 48%;
+    background-color: rgba(240,104,36,.8);
+    left: 17%;
+}
+
+li.playingIt {
+    font-size: 15px;
+    background-color: rgba(0,0,0,.4);
 }
