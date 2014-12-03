@@ -25,6 +25,7 @@ div#header {
     transition: transform .5s;
     font-weight: 100;
     padding-bottom: 0%;
+    z-index: 50;
 }
 
 .mobileNavigation {
@@ -35,6 +36,15 @@ div#header {
     float: left;
     position: relative;
     margin-left: -1px;
+}
+
+
+
+.sections {
+    
+ -webkit-background-size: cover;
+background-size: cover;   
+ height: 61.33%;
 }
 
 div#logo {
@@ -91,6 +101,19 @@ a.logoText {
     top: 25px;
     text-decoration: none;
     left: 57px;
+}
+
+div#sections {
+    left: -7%;
+    width: 86%;
+    height: 92.5%;
+    -webkit-transform: translate(0,0%);
+    -ms-transform: translate(0,0%);
+    transform: translate(0,0%);
+    bottom: 43px;
+    top: initial;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 
@@ -157,7 +180,7 @@ a.logoText {}
 
 div#contentContainer {
     position: absolute;
-    top: 80px;
+    top: -2px;
     width: 100%;
     left: 0;
     
@@ -166,7 +189,8 @@ div#contentContainer {
     height: -webkit-calc(100% - 75px);
     height: -webkit-calc(100% - 90px);
     height: -webkit-calc(100% - 165px);
-    height: calc(100% - 165px);
+    height: -webkit-calc(100% - 40px);
+    height: calc(100% - 40px);
 }
 
 .right {
@@ -183,11 +207,11 @@ div#contentContainer {
 
 .third {
     width: 86%;
-    height: 90%;
+    height: 66%;
     overflow-y: scroll;
     float: left;
     padding: 7%;
-    top: 0px;
+    top: 13%;
     position: absolute;
     padding-bottom: 5%;
 }
@@ -251,7 +275,7 @@ h4 {
 .podcastImage {
 width: 68%;
 background-color: black;
-min-height: 131px;
+min-height: 50%;
     -webkit-background-size: cover;
 background-size: cover;
 }
@@ -268,14 +292,14 @@ p.excerpt {
 a.readMore {
     color: white;
     float: right;
-    margin-right: 11px;
+    margin-right: 32px;
     font-size: 16px;
     font-weight: 100;
 }
 
 .podcastImage img {
     width: 20%;
-    margin-top: 35px;
+    margin-top: 61px;
     margin-left: 19%;
     opacity: 0.75;
 }
@@ -323,7 +347,7 @@ div#player {
     height: 60%;
     -webkit-transition: all .5s;
     transition: all .5s;
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0,0,0,.5);
 }
 
 div#audioplayer {
@@ -359,9 +383,9 @@ h5 {
 .socialContainer {
     width: 10%;
     position: absolute;
-    right: 83px;
+    right: 99px;
     margin-top: 35px;
-    height: 7%;
+    height: 4%;
     overflow: hidden;
 }
 
@@ -374,7 +398,7 @@ h5 {
 img {}
 
 .twitterContainer {
-    right: 32px;
+    right: 49px;
 }
 
 .twitterContainer img {
@@ -514,7 +538,8 @@ div#backgroundImage {
 #backgroundImage img {
     min-height: 100%;
     min-height: 100%;
-    -webkit-filter: blur(40px);
+    min-width: 100%;
+    -webkit-filter: blur(45px);
     filter: blur(40px);
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
@@ -547,6 +572,7 @@ li a {
     -webkit-transform: translateY(10px);
     -ms-transform: translateY(10px);
     transform: translateY(10px);
+    line-height: 12px;
 }
 
 ul#queueList {
@@ -589,3 +615,265 @@ li.playingIt {
     font-size: 15px;
     background-color: rgba(0,0,0,.4);
 }
+
+ul.articleList {
+    margin-bottom: 0px;
+    list-style: none;
+    font-size: 15.5px;
+    font-weight: 200;
+    margin-top: 113px;
+    z-index: 1;
+    position: absolute;
+    width: 47%;
+}
+
+.sections h2 {
+    margin-top: 0px;
+    color: white;
+    font-weight: 200;
+    margin-left: 7%;
+    margin-top: 10px;
+    padding-top: 0%;
+    margin-bottom: 4px;
+    z-index: 1;
+    position: absolute;
+    font-size: 64px;
+}
+
+
+
+.articleList li {
+    margin-bottom: 14px;
+}
+
+
+
+
+
+
+
+    
+    .sections::before {
+ opacity: .5;   
+    -webkit-background-size: cover cover;   
+    background-size: cover;
+}
+
+#readSection::before {
+content: "";
+background-color: black;
+top: 61.33%;
+left: 0;
+bottom: 0;
+right: 0;
+position: absolute;
+z-index: 0;
+height: 61.33%;
+}
+
+#listensection::before {
+content: "";
+background-color: black;
+
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+position: absolute;
+z-index: 0;
+height: 61.33%;
+}
+#watchSection::before {
+content: "";
+background-color: black;
+
+top: 122.66%;
+left: 0;
+bottom: 0;
+right: 0;
+position: absolute;
+z-index: 0;
+height: 66.66%;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 800px) {
+
+    
+    
+    .podcastImage {
+     
+        min-height: 40%;
+        
+    }
+    
+ul.articleList {
+    margin-bottom: 0px;
+    list-style: none;
+    font-size: 11.5px;
+    font-weight: 200;
+    margin-top: 22%;
+    z-index: 1;
+    position: absolute;
+    width: 53%;
+}
+
+.sections h2 {
+    margin-top: 0px;
+    color: white;
+    font-weight: 200;
+    margin-left: 7%;
+    margin-top: 0%;
+    padding-top: 1%;
+    margin-bottom: 4px;
+    z-index: 1;
+    position: absolute;
+    font-size: 45px;
+}
+
+
+
+.articleList li {
+    margin-bottom: 4px;
+}
+
+    
+    
+    
+    .sections::before {
+ opacity: .5;   
+    -webkit-background-size: cover cover;   
+    background-size: cover;
+}
+
+#readSection::before {
+content: "";
+background-color: black;
+top: 33.33%;
+left: 0;
+bottom: 0;
+right: 0;
+position: absolute;
+z-index: 0;
+height: 33.333%;
+}
+
+#listensection::before {
+content: "";
+background-color: black;
+
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+position: absolute;
+z-index: 0;
+height: 33.333%;
+}
+#watchSection::before {
+content: "";
+background-color: black;
+
+top: 66.66%;
+left: 0;
+bottom: 0;
+right: 0;
+position: absolute;
+z-index: 0;
+height: 33.333%;
+}
+
+    
+    
+   div#header {
+    display: none;
+}
+
+.third {
+    width: 29%;
+    padding: 2%;
+    position: relative;
+    float: left;
+}
+
+div#podcasts {
+    left: 0px;
+    position: absolute;
+    left: 26%;
+    width: 36%;
+    height: 100%;
+    height: -webkit-calc(91.5% - 134px);
+    height: -webkit-calc(92.5% - 134px);
+    height: -webkit-calc(92.5% - 109px);
+    height: 84%;
+    padding-top: 8%;
+    top: 0px;
+}
+
+div#about {
+left: 0px;
+position: fixed;
+right: 0px;
+left: initial;
+height: 86%;
+top: 0%;
+padding-top: 5%;
+}
+    
+    
+div#musicPlayer {
+    width: 66.66%;
+}
+    
+ 
+    .button {
+    margin-right: 40%;
+}
+    
+    
+    
+    div#sections {
+    padding: 0px;
+    width: 24%;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    height: -webkit-calc(100% - 85px);
+    height: 100%;
+    left: 0px;
+}
+    
+ div#logo2 {
+    margin-top: -1%;
+}   
+   
+    .sections {
+        
+     height: 33.333%;   
+    
+}
+    
+    div#contentContainer {
+    height: -webkit-calc(100% - 83px);
+    height: calc(100% - 83px);
+}
+    
+    
+}
+
+
+
+
+
+
+
+

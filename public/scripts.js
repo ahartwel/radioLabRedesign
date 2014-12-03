@@ -8,7 +8,7 @@ var feedurl="http://feeds.wnyc.org/radiolab?format=xml"
 var feedlimit=10
 var rssoutput="<h2>Latest NPR Business News:</h2><ul>";
     
-var toucher, podcast, music;
+var toucher, podcast, music, styling;
 
 
     function rssfeedsetup(){
@@ -32,9 +32,12 @@ feedpointer.load(displayfeed2)
              toucher = new touchInput();  
             podcast = new podcasts();
             music = new player();
+            styling = new styleSheets();
             
-                rssfeedsetup();
+            
+               // rssfeedsetup();
                 rssfeedsetup2();
+                getPodcasts();    
             
             document.getElementById("podcasts").scrollIntoView();
             
@@ -45,10 +48,27 @@ feedpointer.load(displayfeed2)
                     toucher.swiped(ev);
                     });
           
-            
+         toggleFullScreen();
             requestAnimationFrame(animate);
             
 }
+        
+        
+        function toggleFullScreen() {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+    requestFullScreen.call(docEl);
+  }
+  else {
+    cancelFullScreen.call(doc);
+  }
+}
+        
 
         function animate() {
             
@@ -80,7 +100,7 @@ feedpointer.load(displayfeed2)
                 this.casts[i].ele.childNodes[1].childNodes[4].childNodes[1].addEventListener("click", function(event) {
                     console.log(event.srcElement.getAttribute("number"));
                     var num = event.srcElement.getAttribute("number");
-                    music.addToQueue(stories[num].mediaGroups[0].contents[0].url, podcast.casts[num].title, num);
+                    music.addToQueue(stories[num].audio, podcast.casts[num].title, num);
                     
                 });
             }
@@ -122,7 +142,7 @@ feedpointer.load(displayfeed2)
          this.casts[theCastNum].title = title;   
          this.casts[theCastNum].image = image;
          this.casts[theCastNum].excerpt = excerpt;
-            console.log(mp3);
+           
          this.casts[theCastNum].mp3 = mp3;
             
             this.casts[theCastNum].ele = "";
@@ -135,7 +155,7 @@ feedpointer.load(displayfeed2)
             
          this.casts[theCastNum].html = "<div class='podcastContainer'><h4>" + title + "</h4>";   
          this.casts[theCastNum].html += "<div class='podcastContainer'><p class='excerpt' number='" + (theCastNum) + "'></p>";
-         this.casts[theCastNum].html += "<a href='#' class='readMore'>Read More</a><div class='socialContainer fbContainer'><img src='images/social.svg'></div><div class='socialContainer twitterContainer'><img src='images/social.svg'></div><div class='podcastImage' style='background: url(" + image + ") no-repeat center center fixed; webkit-background-size: cover; background-size: cover;'>";
+         this.casts[theCastNum].html += "<a href='#' class='readMore'>Read More</a><div class='socialContainer fbContainer'><img src='images/social.svg'></div><div class='socialContainer twitterContainer'><img src='images/social.svg'></div><div class='podcastImage' style='background: url(" + image + "); webkit-background-size: cover; background-size: cover;'>";
          this.casts[theCastNum].html += "<img class='playButton'  number='" + theCastNum + "' src='images/play.svg'><img sclass='addToPlaylist' number='" + theCastNum + "' src='images/addToPlayList.svg'></div></div></div>";
             
         document.getElementById("podcasts").innerHTML  += this.casts[this.casts.length-1].html;
@@ -144,7 +164,7 @@ feedpointer.load(displayfeed2)
             
             this.casts[theCastNum].loaded = function(whichOne) {
               podcast.casts[whichOne].context.drawImage(podcast.casts[whichOne].img,0,0);  
-                console.log(podcast.casts[whichOne].img);
+               
                 
             }
             
@@ -183,6 +203,52 @@ feedpointer.load(displayfeed2)
         
     }
     
+
+
+
+
+
+
+    function styleSheets() {
+        
+     
+        this.style = document.createElement("style");
+        
+        document.head.appendChild(this.style);
+        
+        this.sheet = this.style.sheet;
+        
+        
+        
+        this.addStyle = function(element, rules) {
+            
+            for (var i = 0; i<rules.length; i++) {
+         this.sheet.addRule(element + "::before", rules[i]);   
+            
+            
+            
+        }
+        }
+            
+            
+        this.addBackImage = function(elementId, img) {
+            
+            document.getElementById(elementId).className += " " + elementId;
+            
+             this.sheet.addRule("." + elementId + "::before", "background-image: url(" + img + ")"); 
+                
+          
+            
+        }
+            
+            
+            
+            
+            
+            
+        
+    }
+
 
        
 
@@ -601,10 +667,46 @@ this.timeline = document.getElementById('timeline');
 }
 
 
+
+        function getPodcasts() {
+            
+           var castCover = false; 
+               
+       $.get( "/podcasts", function( data ) {
+   
+         stories = data; 
+          
+           for (var i = 0; i<stories.length; i++) {
+//         console.log(stories[data.id].title);
+        podcast.addCast(stories[i].name,stories[i].image,stories[i].article, stories[i].audio);
+   
+        if (castCover==false) {
+         castCover=true;   
+            //document.getElementById("listenSection").style.backgroundImage = "url(" + stories[i].image + ")"; ; 
+            
+            styling.addBackImage("listenSection", stories[i].image);
+            
+        }
+        
+           }
+        
+    });
+     
+            
+            
+            
+        }
+
         
         function displayfeed2(result){
+            
+            
 if (!result.error){
 var thefeeds=result.feed.entries;
+   
+    
+     var watch = false;
+    var read = false;
     
 for (var i=0; i<thefeeds.length-1; i++) {
   
@@ -613,18 +715,57 @@ for (var i=0; i<thefeeds.length-1; i++) {
     var urls = thefeeds[i].link.split("/");
 // console.log(urls[4]);
    
-    
+    console.log("!!!!  " + i);
     
     $.get( "../scrape/" + urls[4] + "/" + i, function( data ) {
-//    console.log(data);
-         stories2[data.id] =data; 
+        console.log(data);
+        stories2[data.id] =data; 
       
+        
+            if (read==false) {
+            if (stories2[data.id].image && stories2[data.id].video==false) {
+                console.log(stories2[data.id].image + "  WOOOOH YEAH WOOOH!");
+             read = true;
+                
+                
+                
+               // document.getElementById("readSection").style.backgroundImage = "url(" + stories2[data.id].image + ")";
+                
+                styling.addBackImage("readSection", stories2[data.id].image);
+                
+                
+            }
+            }
+                
+                if (watch==false && stories2[data.id].video) {
+            if (stories2[data.id].image) {
+                console.log(stories2[data.id].image + "  WOOOOH YEAH WOOOH!");
+                watch = true;
+//                document.getElementById("WatchSection").style.backgroundImage = "url(" + stories2[data.id].image + ")"; ;
+                
+                styling.addBackImage("WatchSection", stories2[data.id].image);
+                
+                
+            }
+                
+               
+        }
+        
    
     });
     
 //rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
 
 }
+    
+  
+
+    
+        
+        
+
+    
+    
 }
 else
 alert("Error fetching feeds!")
@@ -634,6 +775,8 @@ alert("Error fetching feeds!")
         function displayfeed1(result){
 if (!result.error){
 
+    
+    var castCover = false;
 
 var thefeeds=result.feed.entries;
     stories = thefeeds;
@@ -643,26 +786,30 @@ for (var i=0; i<thefeeds.length-1; i++) {
 
    
     var urls = thefeeds[i].link.split("/");
- console.log(urls[4]);
- console.log(urls);
+
     
     var u = "";
     
     for (var p = 2; p<urls.length;p++) {
         u+=urls[p] + "/";
     }
-    console.log(u);
-    
+   
     
     
     $.get( "../scrape2/" + encodeURIComponent(u) + "/" + i, function( data ) {
    
          stories[data.id].extraInfo = data; 
-           console.log(data);
-       console.log(stories[data.id]);
+          
 //         console.log(stories[data.id].title);
         podcast.addCast(stories[data.id].title,stories[data.id].extraInfo.image,stories[data.id].extraInfo.article, stories[data.id].mediaGroups[0].contents[0].url);
    
+        if (castCover==false) {
+         castCover=true;   
+            document.getElementById("listenSection").style.backgroundImage = "url(" + stories[data.id].extraInfo.image + ")"; ; 
+            
+        }
+        
+        
     });
     
 //rssoutput+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
